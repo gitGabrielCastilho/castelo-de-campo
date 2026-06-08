@@ -1,0 +1,10 @@
+# secrets — never commit
+.env
+
+# local submission data (LGPD: stays on the VPS, not in git)
+data/
+*.jsonl
+
+# python
+__pycache__/
+*.pyc

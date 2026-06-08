@@ -1,0 +1,54 @@
+services:
+  castelo:
+    image: caddy:2-alpine
+    container_name: castelo-de-campo
+    restart: unless-stopped
+    mem_limit: 64m
+    command: ["caddy", "file-server", "--root", "/srv", "--listen", ":80"]
+    volumes:
+      - ./site:/srv:ro
+    networks:
+      - castelo_internal
+    labels:
+      - 'traefik.enable=true'
+      # host-network Traefik reaches this container on its castelo_internal bridge IP
+      - 'traefik.docker.network=castelo_internal'
+      - 'traefik.http.services.castelo.loadbalancer.server.port=80'
+      # static site: castelodecampo.com + www
+      - 'traefik.http.routers.castelo.rule=Host(`castelodecampo.com`) || Host(`www.castelodecampo.com`)'
+      - 'traefik.http.routers.castelo.entrypoints=web,websecure'
+      - 'traefik.http.routers.castelo.tls=true'
+      - 'traefik.http.routers.castelo.tls.certresolver=letsencrypt'
+      - 'traefik.http.routers.castelo.service=castelo'
+
+  waitlist:
+    build:
+      context: ./handler
+    image: castelo-waitlist:latest
+    container_name: castelo-waitlist
+    restart: unless-stopped
+    mem_limit: 96m
+    env_file:
+      - .env
+    volumes:
+      - waitlist_data:/data
+    networks:
+      - castelo_internal
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=castelo_internal'
+      - 'traefik.http.services.waitlist.loadbalancer.server.port=80'
+      # /api/* on the same hostnames -> handler. Longer rule = higher priority than static.
+      - 'traefik.http.routers.waitlist.rule=(Host(`castelodecampo.com`) || Host(`www.castelodecampo.com`)) && PathPrefix(`/api`)'
+      - 'traefik.http.routers.waitlist.entrypoints=web,websecure'
+      - 'traefik.http.routers.waitlist.tls=true'
+      - 'traefik.http.routers.waitlist.tls.certresolver=letsencrypt'
+      - 'traefik.http.routers.waitlist.service=waitlist'
+
+networks:
+  # Own bridge network, same pattern as mm3_internal. Auto-created by compose.
+  castelo_internal:
+    name: castelo_internal
+
+volumes:
+  waitlist_data:

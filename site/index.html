@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Castelo de Campo — Lista de espera 2027</title>
+  <meta name="description" content="Lista de espera para atendimentos psicológicos em 2027 do espaço clínico Castelo de Campo." />
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-soft: #efe7db;
+      --surface: rgba(255, 252, 247, 0.8);
+      --surface-strong: #fffaf2;
+      --ink: #253026;
+      --muted: #566254;
+      --line: rgba(63, 81, 58, 0.16);
+      --accent: #5a6e49;
+      --accent-strong: #425537;
+      --accent-soft: #d6dec7;
+      --warm: #b08a63;
+      --shadow: 0 20px 60px rgba(46, 45, 34, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: min(1120px, calc(100vw - 2rem));
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(214, 222, 199, 0.8), transparent 38%),
+        radial-gradient(circle at right 18%, rgba(176, 138, 99, 0.16), transparent 28%),
+        linear-gradient(180deg, #f5efe5 0%, #f1ebe1 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    .shell {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(244, 239, 230, 0.7);
+      border-bottom: 1px solid rgba(90, 110, 73, 0.1);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #60754f 0%, #435738 100%);
+      color: #fffaf0;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .brand-sub {
+      margin: 0.1rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      padding: 0.28rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.52);
+      gap: 0.3rem;
+    }
+
+    .lang-btn {
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+      min-height: 44px;
+      transition: 160ms ease;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(66, 85, 55, 0.2);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      border-radius: 999px;
+      padding: 0.9rem 1.3rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease;
+      font-weight: 600;
+    }
+
+    .btn:hover,
+    .btn:focus-visible { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    .lang-btn:focus-visible,
+    .nav a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    .checkbox input:focus-visible + span {
+      outline: 3px solid rgba(90, 110, 73, 0.24);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(66, 85, 55, 0.24);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--accent-strong);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.58);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .section {
+      padding: 5.5rem 0;
+    }
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .panel,
+    .notice,
+    .form-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-copy {
+      border-radius: 32px;
+      padding: 3rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      color: var(--accent-strong);
+      background: rgba(214, 222, 199, 0.58);
+      font-size: 0.92rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      line-height: 1.08;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.65rem, 5vw, 4.9rem);
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 1.25rem 0 0;
+      text-wrap: pretty;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .meta-item {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 242, 0.72);
+      border: 1px solid rgba(90, 110, 73, 0.1);
+    }
+
+    .meta-item strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta-item span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .hero-card {
+      border-radius: 32px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      min-height: 100%;
+    }
+
+    .photo {
+      border-radius: 26px;
+      min-height: 430px;
+      background:
+        linear-gradient(180deg, rgba(59, 72, 49, 0.08), rgba(59, 72, 49, 0.18)),
+        radial-gradient(circle at 75% 18%, rgba(255,255,255,0.72), transparent 20%),
+        linear-gradient(135deg, #d9d2c4 0%, #c5b59d 44%, #8ba082 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo::before,
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      filter: blur(0.2px);
+    }
+
+    .photo::before {
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 249, 240, 0.36);
+      top: 24px;
+      right: 24px;
+    }
+
+    .photo::after {
+      width: 360px;
+      height: 360px;
+      background: rgba(75, 97, 68, 0.16);
+      bottom: -120px;
+      left: -40px;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 1rem 1.1rem;
+      background: rgba(255, 250, 242, 0.7);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .photo-caption strong {
+      font-family: var(--serif);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      color: var(--warm);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-body p,
+    .section-body li,
+    .panel p,
+    .notice p,
+    footer p,
+    label,
+    input,
+    select,
+    textarea {
+      color: var(--muted);
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+    }
+
+    .panel h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .panel ul,
+    .steps {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullet-list li,
+    .steps li {
+      padding-left: 1.35rem;
+      position: relative;
+      margin-top: 0.75rem;
+    }
+
+    .bullet-list li::before,
+    .steps li::before {
+      content: "";
+      width: 0.54rem;
+      height: 0.54rem;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      box-shadow: 0 0 0 6px rgba(90, 110, 73, 0.12);
+    }
+
+    .steps li {
+      padding: 1rem 1rem 1rem 3.2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(90,110,73,0.1);
+      background: rgba(255,250,242,0.7);
+      margin-top: 0.9rem;
+    }
+
+    .steps li::before {
+      width: 1.7rem;
+      height: 1.7rem;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent-soft);
+      box-shadow: none;
+      display: grid;
+      place-items: center;
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 700;
+      font-family: var(--sans);
+    }
+
+    .steps li[data-step="1"]::before { content: "1"; }
+    .steps li[data-step="2"]::before { content: "2"; }
+    .steps li[data-step="3"]::before { content: "3"; }
+    .steps li[data-step="4"]::before { content: "4"; }
+
+    .ethical-note {
+      margin-top: 1.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(214, 222, 199, 0.42);
+      border: 1px solid rgba(90, 110, 73, 0.12);
+      color: var(--accent-strong);
+    }
+
+    .signup {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .form-card {
+      border-radius: 32px;
+      padding: 1.6rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .fields-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(90, 110, 73, 0.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.74);
+      padding: 0.95rem 1rem;
+      min-height: 50px;
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .checkbox {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      background: rgba(255,250,242,0.72);
+      border: 1px solid rgba(90,110,73,0.12);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .checkbox input {
+      width: 20px;
+      height: 20px;
+      min-height: 20px;
+      margin-top: 0.15rem;
+      accent-color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .success {
+      display: none;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(214, 222, 199, 0.58);
+      color: var(--accent-strong);
+      border: 1px solid rgba(90,110,73,0.12);
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .notice {
+      border-radius: 26px;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid rgba(176, 138, 99, 0.18);
+      background: rgba(255, 248, 240, 0.9);
+    }
+
+    .notice strong {
+      display: block;
+      font-family: var(--serif);
+      margin-bottom: 0.35rem;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid rgba(90,110,73,0.12);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 0.92rem; }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .signup,
+      .grid-3,
+      .grid-2,
+      .fields-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 0;
+      }
+
+      .nav {
+        justify-content: space-between;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .form-card,
+      .panel,
+      .notice {
+        border-radius: 24px;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 4.4rem 0; }
+      .hero { padding-top: 2rem; }
+      .hero-copy { padding: 1.5rem; }
+      .hero-card { padding: 0.9rem; }
+      .photo { min-height: 320px; }
+      .nav { gap: 0.8rem; font-size: 0.92rem; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">CC</div>
+        <div class="brand-copy">
+          <p class="brand-name">Castelo de Campo</p>
+          <p class="brand-sub" data-i18n="brandSub">Psicologia e cuidado emocional</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about" data-i18n="navAbout">Sobre</a>
+        <a href="#therapy" data-i18n="navTherapy">Atendimento</a>
+        <a href="#waiting-list" data-i18n="navWaitingList">Lista de espera</a>
+        <a href="#contact" data-i18n="navContact">Contato</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" type="button" data-lang="pt-BR" aria-pressed="true">PT-BR</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-primary" href="#signup-form" data-i18n="headerCta">Quero entrar na lista de espera</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="eyebrow">Lista de espera • novos atendimentos em 2027</div>
+          <h1 data-i18n="heroTitle">Lista de espera para atendimentos psicológicos em 2027</h1>
+          <p class="lead" data-i18n="heroSubtitle">Um espaço de escuta, cuidado e acolhimento para quem deseja iniciar um processo terapêutico com responsabilidade e atenção.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#signup-form" data-i18n="heroPrimary">Quero entrar na lista de espera</a>
+            <a class="btn btn-secondary" href="#therapy" data-i18n="heroSecondary">Saiba mais sobre o atendimento</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              <strong data-i18n="meta1Title">Escuta ética</strong>
+              <span data-i18n="meta1Text">Comunicação cuidadosa, sem promessas indevidas ou atalhos.</span>
+            </div>
+            <div class="meta-item">
+              <strong data-i18n="meta2Title">Privacidade</strong>
+              <span data-i18n="meta2Text">Dados usados apenas para contato relacionado à lista de espera.</span>
+            </div>
+            <div class="meta-item">
+              <strong data-i18n="meta3Title">Acolhimento</strong>
+              <span data-i18n="meta3Text">Espaço sensível para quem deseja iniciar processo terapêutico com calma.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Visual representation of calm and listening">
+          <div class="photo">
+            <div class="photo-caption">
+              <strong data-i18n="photoTitle">Cuidado com tempo, presença e atenção</strong>
+              <span class="muted small" data-i18n="photoText">Ambiente pensado para transmitir serenidade, escuta e responsabilidade profissional.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker" data-i18n="aboutKicker">Sobre</div>
+            <h2 data-i18n="aboutTitle">Um espaço clínico voltado para presença, escuta e construção gradual do processo terapêutico.</h2>
+          </div>
+          <div class="section-body">
+            <p data-i18n="aboutText1">Castelo de Campo é um espaço clínico dedicado ao cuidado psicológico com atenção à ética profissional, à confidencialidade e ao ritmo singular de cada pessoa.</p>
+            <p data-i18n="aboutText2">A proposta é oferecer um ambiente de acolhimento, escuta qualificada e responsabilidade no acompanhamento, respeitando limites, contexto e privacidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="therapy">
+      <div class="shell grid-2">
+        <article class="panel">
+          <div class="section-kicker" data-i18n="forKicker">Para quem</div>
+          <h3 data-i18n="forTitle">Lista de espera para pessoas interessadas em iniciar psicoterapia em 2027.</h3>
+          <ul class="bullet-list">
+            <li data-i18n="forItem1">Busca por espaço para falar sobre sofrimento emocional, ansiedade, estresse ou sobrecarga.</li>
+            <li data-i18n="forItem2">Necessidade de elaboração de mudanças de vida, relações, conflitos ou momentos de transição.</li>
+            <li data-i18n="forItem3">Interesse em autoconhecimento, cuidado com saúde mental e acompanhamento profissional responsável.</li>
+          </ul>
+          <div class="ethical-note" data-i18n="ethicalNote">Este formulário não substitui atendimento psicológico, avaliação profissional ou serviço de emergência.</div>
+        </article>
+
+        <article class="panel" id="waiting-list">
+          <div class="section-kicker" data-i18n="howKicker">Como funciona</div>
+          <h3 data-i18n="howTitle">Processo simples, com contato posterior conforme disponibilidade.</h3>
+          <ol class="steps">
+            <li data-step="1"><span data-i18n="step1">Você preenche o formulário com informações básicas de contato e interesse.</span></li>
+            <li data-step="2"><span data-i18n="step2">Quando houver disponibilidade, contato inicial será realizado pela profissional ou equipe.</span></li>
+            <li data-step="3"><span data-i18n="step3">Nesse retorno, serão informados horários, formato de atendimento e próximos passos.</span></li>
+            <li data-step="4"><span data-i18n="step4">Envio do formulário não garante agendamento imediato.</span></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell signup">
+        <aside class="panel">
+          <div class="section-kicker" data-i18n="privacyKicker">Privacidade e proteção de dados</div>
+          <h3 data-i18n="privacyTitle">Dados tratados com confidencialidade e usados apenas para contato sobre lista de espera.</h3>
+          <p data-i18n="privacyText1">As informações enviadas serão utilizadas exclusivamente para comunicação relacionada à lista de espera, em conformidade com a LGPD.</p>
+          <p data-i18n="privacyText2">Seus dados não serão compartilhados para finalidades não informadas nesta página.</p>
+
+          <div class="notice" style="margin-top: 1.4rem;" id="contact">
+            <strong data-i18n="noticeTitle">Aviso importante</strong>
+            <p data-i18n="noticeText">Em caso de emergência, risco imediato ou crise intensa, procure um serviço de emergência, pronto atendimento ou ligue para o CVV pelo número 188.</p>
+          </div>
+        </aside>
+
+        <section class="form-card" id="signup-form" aria-labelledby="form-heading">
+          <div class="section-kicker" data-i18n="formKicker">Inscrição</div>
+          <h2 id="form-heading" data-i18n="formTitle">Entre na lista de espera</h2>
+          <p class="lead small" style="margin-bottom: 1.5rem;" data-i18n="formIntro">Preencha informações abaixo para receber contato quando houver disponibilidade para novos atendimentos em 2027.</p>
+
+          <div id="successMessage" class="success" role="status" aria-live="polite" data-i18n="successMessage">Inscrição recebida! Entraremos em contato quando houver disponibilidade para novos atendimentos em 2027.</div>
+
+          <form id="waitlistForm">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+            <div class="fields-2">
+              <label>
+                <span data-i18n="labelName">Nome completo</span>
+                <input name="name" required data-placeholder-key="placeholderName" placeholder="Seu nome completo" />
+              </label>
+              <label>
+                <span data-i18n="labelEmail">E-mail</span>
+                <input name="email" type="email" required data-placeholder-key="placeholderEmail" placeholder="voce@email.com" />
+              </label>
+            </div>
+
+            <div class="fields-2">
+              <label>
+                <span data-i18n="labelPhone">Telefone / WhatsApp</span>
+                <input name="phone" required data-placeholder-key="placeholderPhone" placeholder="(00) 00000-0000" />
+              </label>
+              <label>
+                <span data-i18n="labelCity">Cidade / Estado</span>
+                <input name="city" required data-placeholder-key="placeholderCity" placeholder="Cidade / Estado" />
+              </label>
+            </div>
+
+            <div class="fields-2">
+              <label>
+                <span data-i18n="labelLanguage">Idioma preferido</span>
+                <select name="language" required data-options="languageOptions"></select>
+              </label>
+              <label>
+                <span data-i18n="labelFormat">Formato preferido</span>
+                <select name="format" required data-options="formatOptions"></select>
+              </label>
+            </div>
+
+            <label>
+              <span data-i18n="labelReason">Breve motivo do interesse em psicoterapia</span>
+              <textarea name="reason" required data-placeholder-key="placeholderReason" placeholder="Se desejar, compartilhe de forma breve o que motivou sua busca por atendimento."></textarea>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span data-i18n="consentText">Li e concordo com o uso dos meus dados para fins de contato sobre a lista de espera, conforme a política de privacidade.</span>
+            </label>
+
+            <button class="btn btn-primary" type="submit" data-i18n="formButton">Enviar inscrição</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div>
+        <p class="brand-name">Castelo de Campo</p>
+        <p class="brand-sub" data-i18n="footerSub">Psicologia e cuidado emocional</p>
+        <p class="muted small"><span data-i18n="footerEmailLabel">Contato:</span> contato@castelodecampo.com</p>
+      </div>
+      <div class="footer-links small">
+        <a href="#" data-i18n="privacyLink">Política de Privacidade</a>
+        <a href="#" data-i18n="termsLink">Termos de Uso</a>
+        <span data-i18n="copyright">© 2026 Castelo de Campo. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dictionary = {
+      'pt-BR': {
+        brandSub: 'Psicologia e cuidado emocional',
+        navAbout: 'Sobre',
+        navTherapy: 'Atendimento',
+        navWaitingList: 'Lista de espera',
+        navContact: 'Contato',
+        headerCta: 'Quero entrar na lista de espera',
+        eyebrow: 'Lista de espera • novos atendimentos em 2027',
+        heroTitle: 'Lista de espera para atendimentos psicológicos em 2027',
+        heroSubtitle: 'Um espaço de escuta, cuidado e acolhimento para quem deseja iniciar um processo terapêutico com responsabilidade e atenção.',
+        heroPrimary: 'Quero entrar na lista de espera',
+        heroSecondary: 'Saiba mais sobre o atendimento',
+        meta1Title: 'Escuta ética',
+        meta1Text: 'Comunicação cuidadosa, sem promessas indevidas ou atalhos.',
+        meta2Title: 'Privacidade',
+        meta2Text: 'Dados usados apenas para contato relacionado à lista de espera.',
+        meta3Title: 'Acolhimento',
+        meta3Text: 'Espaço sensível para quem deseja iniciar processo terapêutico com calma.',
+        photoTitle: 'Cuidado com tempo, presença e atenção',
+        photoText: 'Ambiente pensado para transmitir serenidade, escuta e responsabilidade profissional.',
+        aboutKicker: 'Sobre',
+        aboutTitle: 'Um espaço clínico voltado para presença, escuta e construção gradual do processo terapêutico.',
+        aboutText1: 'Castelo de Campo é um espaço clínico dedicado ao cuidado psicológico com atenção à ética profissional, à confidencialidade e ao ritmo singular de cada pessoa.',
+        aboutText2: 'A proposta é oferecer um ambiente de acolhimento, escuta qualificada e responsabilidade no acompanhamento, respeitando limites, contexto e privacidade.',
+        forKicker: 'Para quem',
+        forTitle: 'Lista de espera para pessoas interessadas em iniciar psicoterapia em 2027.',
+        forItem1: 'Busca por espaço para falar sobre sofrimento emocional, ansiedade, estresse ou sobrecarga.',
+        forItem2: 'Necessidade de elaboração de mudanças de vida, relações, conflitos ou momentos de transição.',
+        forItem3: 'Interesse em autoconhecimento, cuidado com saúde mental e acompanhamento profissional responsável.',
+        ethicalNote: 'Este formulário não substitui atendimento psicológico, avaliação profissional ou serviço de emergência.',
+        howKicker: 'Como funciona',
+        howTitle: 'Processo simples, com contato posterior conforme disponibilidade.',
+        step1: 'Você preenche o formulário com informações básicas de contato e interesse.',
+        step2: 'Quando houver disponibilidade, contato inicial será realizado pela profissional ou equipe.',
+        step3: 'Nesse retorno, serão informados horários, formato de atendimento e próximos passos.',
+        step4: 'Envio do formulário não garante agendamento imediato.',
+        privacyKicker: 'Privacidade e proteção de dados',
+        privacyTitle: 'Dados tratados com confidencialidade e usados apenas para contato sobre lista de espera.',
+        privacyText1: 'As informações enviadas serão utilizadas exclusivamente para comunicação relacionada à lista de espera, em conformidade com a LGPD.',
+        privacyText2: 'Seus dados não serão compartilhados para finalidades não informadas nesta página.',
+        noticeTitle: 'Aviso importante',
+        noticeText: 'Em caso de emergência, risco imediato ou crise intensa, procure um serviço de emergência, pronto atendimento ou ligue para o CVV pelo número 188.',
+        formKicker: 'Inscrição',
+        formTitle: 'Entre na lista de espera',
+        formIntro: 'Preencha informações abaixo para receber contato quando houver disponibilidade para novos atendimentos em 2027.',
+        successMessage: 'Inscrição recebida! Entraremos em contato quando houver disponibilidade para novos atendimentos em 2027.',
+        labelName: 'Nome completo',
+        labelEmail: 'E-mail',
+        labelPhone: 'Telefone / WhatsApp',
+        labelCity: 'Cidade / Estado',
+        labelLanguage: 'Idioma preferido',
+        labelFormat: 'Formato preferido',
+        labelReason: 'Breve motivo do interesse em psicoterapia',
+        consentText: 'Li e concordo com o uso dos meus dados para fins de contato sobre a lista de espera, conforme a política de privacidade.',
+        formButton: 'Enviar inscrição',
+        footerSub: 'Psicologia e cuidado emocional',
+        footerEmailLabel: 'Contato:',
+        privacyLink: 'Política de Privacidade',
+        termsLink: 'Termos de Uso',
+        copyright: '© 2026 Castelo de Campo. Todos os direitos reservados.',
+        placeholderName: 'Seu nome completo',
+        placeholderEmail: 'voce@email.com',
+        placeholderPhone: '(00) 00000-0000',
+        placeholderCity: 'Cidade / Estado',
+        placeholderReason: 'Se desejar, compartilhe de forma breve o que motivou sua busca por atendimento.',
+        languageOptions: [
+          ['Português (Brasil)', 'pt-BR'],
+          ['English', 'en']
+        ],
+        formatOptions: [
+          ['Online', 'online'],
+          ['Presencial', 'in-person'],
+          ['Sem preferência', 'no-preference']
+        ],
+        pageTitle: 'Castelo de Campo — Lista de espera 2027',
+        pageDescription: 'Lista de espera para atendimentos psicológicos em 2027 do espaço clínico Castelo de Campo.'
+      },
+      en: {
+        brandSub: 'Psychology and emotional care',
+        navAbout: 'About',
+        navTherapy: 'Therapy',
+        navWaitingList: 'Waiting List',
+        navContact: 'Contact',
+        headerCta: 'Join the waiting list',
+        eyebrow: 'Waiting list • new openings in 2027',
+        heroTitle: 'Waiting list for psychological care in 2027',
+        heroSubtitle: 'A space for listening, care, and emotional support for those who wish to begin a therapeutic process with responsibility and attention.',
+        heroPrimary: 'I want to join the waiting list',
+        heroSecondary: 'Learn more about the service',
+        meta1Title: 'Ethical listening',
+        meta1Text: 'Careful communication, without improper promises or shortcuts.',
+        meta2Title: 'Privacy',
+        meta2Text: 'Data used only for contact related to the waiting list.',
+        meta3Title: 'Welcoming care',
+        meta3Text: 'Sensitive space for those who wish to begin therapy with calm and respect.',
+        photoTitle: 'Care shaped by time, presence, and attention',
+        photoText: 'A setting designed to convey calm, listening, and professional responsibility.',
+        aboutKicker: 'About',
+        aboutTitle: 'A clinical space centered on presence, listening, and gradual construction of the therapeutic process.',
+        aboutText1: 'Castelo de Campo is a clinical space focused on psychological care, emotional support, professional ethics, confidentiality, and attention to each person’s individual pace.',
+        aboutText2: 'Its purpose is to offer a welcoming environment with qualified listening and responsible care, respecting limits, context, and privacy.',
+        forKicker: 'Who this is for',
+        forTitle: 'A waiting list for people interested in starting psychotherapy in 2027.',
+        forItem1: 'People seeking space to speak about emotional distress, anxiety, stress, or overload.',
+        forItem2: 'People going through life changes, relationships, conflicts, or transition periods.',
+        forItem3: 'People interested in self-knowledge, mental health care, and responsible professional support.',
+        ethicalNote: 'This form does not replace psychological care, professional assessment, or emergency services.',
+        howKicker: 'How it works',
+        howTitle: 'A simple process, with follow-up contact when availability opens.',
+        step1: 'You fill out the form with basic contact information and your interest in therapy.',
+        step2: 'When availability becomes possible, initial contact will be made by the professional or team.',
+        step3: 'That contact will include schedule information, service format, and next steps.',
+        step4: 'Submitting the form does not guarantee an immediate appointment.',
+        privacyKicker: 'Privacy and data protection',
+        privacyTitle: 'Your data will be handled confidentially and used only for waiting list contact.',
+        privacyText1: 'Submitted information will be used exclusively for communication related to the waiting list, in accordance with LGPD.',
+        privacyText2: 'Your data will not be shared for purposes not described on this page.',
+        noticeTitle: 'Important notice',
+        noticeText: 'In case of emergency, immediate risk, or intense crisis, seek emergency services, urgent care, or contact a local crisis support service.',
+        formKicker: 'Registration',
+        formTitle: 'Join the waiting list',
+        formIntro: 'Complete the information below to receive contact when new openings for 2027 become available.',
+        successMessage: 'Registration received! We will contact you when new openings become available in 2027.',
+        labelName: 'Full name',
+        labelEmail: 'Email',
+        labelPhone: 'Phone / WhatsApp',
+        labelCity: 'City / State',
+        labelLanguage: 'Preferred language',
+        labelFormat: 'Preferred format',
+        labelReason: 'Brief reason for interest in psychotherapy',
+        consentText: 'I have read and agree to the use of my data for contact purposes related to the waiting list, according to the privacy policy.',
+        formButton: 'Submit registration',
+        footerSub: 'Psychology and emotional care',
+        footerEmailLabel: 'Contact:',
+        privacyLink: 'Privacy Policy',
+        termsLink: 'Terms of Use',
+        copyright: '© 2026 Castelo de Campo. All rights reserved.',
+        placeholderName: 'Your full name',
+        placeholderEmail: 'you@email.com',
+        placeholderPhone: '+55 (00) 00000-0000',
+        placeholderCity: 'City / State',
+        placeholderReason: 'If you wish, briefly share what led you to seek psychotherapy.',
+        languageOptions: [
+          ['Portuguese', 'pt-BR'],
+          ['English', 'en']
+        ],
+        formatOptions: [
+          ['Online', 'online'],
+          ['In-person', 'in-person'],
+          ['No preference', 'no-preference']
+        ],
+        pageTitle: 'Castelo de Campo — Waiting List 2027',
+        pageDescription: 'Waiting list for psychological care in 2027 at Castelo de Campo clinical space.'
+      }
+    };
+
+    const root = document.documentElement;
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const translatable = document.querySelectorAll('[data-i18n]');
+    const placeholders = document.querySelectorAll('[data-placeholder-key]');
+    const dynamicSelects = document.querySelectorAll('select[data-options]');
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function renderOptions(lang) {
+      dynamicSelects.forEach(select => {
+        const key = select.dataset.options;
+        const options = dictionary[lang][key];
+        const currentValue = select.value;
+        select.innerHTML = '';
+        options.forEach(([label, value]) => {
+          const option = document.createElement('option');
+          option.value = value;
+          option.textContent = label;
+          if (currentValue && currentValue === value) option.selected = true;
+          select.appendChild(option);
+        });
+      });
+    }
+
+    function setLanguage(lang) {
+      const strings = dictionary[lang] || dictionary['pt-BR'];
+      root.lang = lang === 'en' ? 'en' : 'pt-BR';
+      document.title = strings.pageTitle;
+      metaDescription.setAttribute('content', strings.pageDescription);
+
+      translatable.forEach(node => {
+        const key = node.dataset.i18n;
+        if (strings[key]) node.textContent = strings[key];
+      });
+
+      placeholders.forEach(node => {
+        const key = node.dataset.placeholderKey;
+        if (strings[key]) node.placeholder = strings[key];
+      });
+
+      renderOptions(lang);
+
+      langButtons.forEach(btn => {
+        const active = btn.dataset.lang === lang;
+        btn.setAttribute('aria-pressed', String(active));
+      });
+
+      localStorage.setItem('castelo-lang', lang);
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    const savedLang = localStorage.getItem('castelo-lang');
+    setLanguage(savedLang && dictionary[savedLang] ? savedLang : 'pt-BR');
+
+    const form = document.getElementById('waitlistForm');
+    const successMessage = document.getElementById('successMessage');
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const btnLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '…'; }
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new URLSearchParams(data),
+        });
+        if (!res.ok) throw new Error('bad status ' + res.status);
+        successMessage.classList.add('show');
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        form.reset();
+        setLanguage(localStorage.getItem('castelo-lang') || 'pt-BR');
+      } catch (err) {
+        alert('Não foi possível enviar agora. Tente novamente em instantes.');
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = btnLabel; }
+      }
+    });
+  </script>
+</body>
+</html>
