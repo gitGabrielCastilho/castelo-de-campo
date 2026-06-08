@@ -5,6 +5,9 @@
 data/
 *.jsonl
 
+# design reference images (third-party stock — kept off git)
+refs/
+
 # python
 __pycache__/
 *.pyc

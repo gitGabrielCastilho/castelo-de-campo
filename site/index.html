@@ -5,26 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Castelo de Campo — Lista de espera 2027</title>
   <meta name="description" content="Lista de espera para atendimentos psicológicos em 2027 do espaço clínico Castelo de Campo." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2346586a'/%3E%3Cg fill='%23fcf8f0'%3E%3Crect x='4' y='12' width='5' height='15'/%3E%3Crect x='23' y='12' width='5' height='15'/%3E%3Crect x='12' y='8' width='8' height='19'/%3E%3Crect x='7' y='16' width='18' height='11'/%3E%3Crect x='4' y='10' width='1.4' height='2.2'/%3E%3Crect x='5.8' y='10' width='1.4' height='2.2'/%3E%3Crect x='7.6' y='10' width='1.4' height='2.2'/%3E%3Crect x='23' y='10' width='1.4' height='2.2'/%3E%3Crect x='24.8' y='10' width='1.4' height='2.2'/%3E%3Crect x='26.6' y='10' width='1.4' height='2.2'/%3E%3Crect x='12' y='6' width='2' height='2.2'/%3E%3Crect x='15' y='6' width='2' height='2.2'/%3E%3Crect x='18' y='6' width='2' height='2.2'/%3E%3C/g%3E%3Cpath d='M13.6 27 V21 Q13.6 18 16 18 Q18.4 18 18.4 21 V27 Z' fill='%2346586a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f4efe6;
-      --bg-soft: #efe7db;
-      --surface: rgba(255, 252, 247, 0.8);
-      --surface-strong: #fffaf2;
-      --ink: #253026;
-      --muted: #566254;
-      --line: rgba(63, 81, 58, 0.16);
+      --bg: #ece3d2;
+      --bg-soft: #e3d8c3;
+      --surface: rgba(252, 248, 240, 0.82);
+      --surface-strong: #fcf8f0;
+      --ink: #2b2a24;
+      --muted: #5c5a4d;
+      --line: rgba(70, 88, 106, 0.18);
       --accent: #5a6e49;
-      --accent-strong: #425537;
-      --accent-soft: #d6dec7;
+      --accent-strong: #41502f;
+      --accent-soft: #d8dec8;
+      --stone: #bcaa8c;
+      --stone-deep: #8a7a60;
+      --slate: #5e7184;
+      --slate-deep: #46586a;
+      --sea: #3f7d7a;
       --warm: #b08a63;
-      --shadow: 0 20px 60px rgba(46, 45, 34, 0.1);
+      --shadow: 0 22px 60px rgba(54, 48, 34, 0.14);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
       --radius-sm: 12px;
+      --arch: 50% 50% 0 0 / 22% 22% 0 0;
       --container: min(1120px, calc(100vw - 2rem));
-      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
@@ -34,11 +45,25 @@
       margin: 0;
       font-family: var(--sans);
       background:
-        radial-gradient(circle at top left, rgba(214, 222, 199, 0.8), transparent 38%),
-        radial-gradient(circle at right 18%, rgba(176, 138, 99, 0.16), transparent 28%),
-        linear-gradient(180deg, #f5efe5 0%, #f1ebe1 100%);
+        radial-gradient(circle at top left, rgba(94, 113, 132, 0.12), transparent 40%),
+        radial-gradient(circle at right 16%, rgba(63, 125, 122, 0.12), transparent 30%),
+        radial-gradient(circle at 30% 92%, rgba(90, 110, 73, 0.12), transparent 34%),
+        linear-gradient(180deg, #ece3d2 0%, #e6dccb 100%);
+      background-attachment: fixed;
       color: var(--ink);
-      line-height: 1.6;
+      line-height: 1.62;
+    }
+
+    /* faint quarried-stone grain over the whole page */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
     }
 
     img { max-width: 100%; display: block; }
@@ -77,17 +102,24 @@
     }
 
     .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #60754f 0%, #435738 100%);
-      color: #fffaf0;
+      width: 46px;
+      height: 54px;
+      border-radius: var(--arch);
+      background: linear-gradient(160deg, var(--slate) 0%, var(--slate-deep) 100%);
+      color: #fcf8f0;
       display: grid;
       place-items: center;
-      box-shadow: var(--shadow);
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      letter-spacing: 0.08em;
+      box-shadow: 0 10px 22px rgba(70, 88, 106, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .brand-mark svg {
+      width: 64%;
+      height: auto;
+    }
+
+    .brand-name {
+      font-weight: 600;
     }
 
     .brand-copy {
@@ -234,17 +266,22 @@
     .hero h1,
     h2,
     h3 {
-      font-family: var(--serif);
-      line-height: 1.08;
+      font-family: var(--display);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.005em;
       margin: 0;
       text-wrap: balance;
+      color: var(--ink);
     }
 
     .hero h1 {
-      font-size: clamp(2.65rem, 5vw, 4.9rem);
-      letter-spacing: -0.03em;
-      max-width: 12ch;
+      font-size: clamp(3rem, 5.6vw, 5.4rem);
+      letter-spacing: -0.012em;
+      max-width: 13ch;
     }
+
+    h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); }
 
     .lead {
       font-size: 1.08rem;
@@ -300,38 +337,19 @@
 
     .photo {
       border-radius: 26px;
-      min-height: 430px;
-      background:
-        linear-gradient(180deg, rgba(59, 72, 49, 0.08), rgba(59, 72, 49, 0.18)),
-        radial-gradient(circle at 75% 18%, rgba(255,255,255,0.72), transparent 20%),
-        linear-gradient(135deg, #d9d2c4 0%, #c5b59d 44%, #8ba082 100%);
+      min-height: 460px;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(180deg, #cfc3aa 0%, #b6a586 100%);
+      box-shadow: inset 0 0 0 1px rgba(138, 122, 96, 0.4);
     }
 
-    .photo::before,
-    .photo::after {
-      content: "";
+    .photo > svg {
       position: absolute;
-      inset: auto;
-      border-radius: 999px;
-      filter: blur(0.2px);
-    }
-
-    .photo::before {
-      width: 280px;
-      height: 280px;
-      background: rgba(255, 249, 240, 0.36);
-      top: 24px;
-      right: 24px;
-    }
-
-    .photo::after {
-      width: 360px;
-      height: 360px;
-      background: rgba(75, 97, 68, 0.16);
-      bottom: -120px;
-      left: -40px;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     .photo-caption {
@@ -396,12 +414,28 @@
     }
 
     .panel {
-      border-radius: var(--radius-xl);
-      padding: 1.5rem;
+      border-radius: 30px 30px var(--radius-lg) var(--radius-lg);
+      padding: 1.7rem 1.5rem 1.5rem;
+      position: relative;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -11px;
+      transform: translateX(-50%);
+      width: 46px;
+      height: 22px;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+      border-bottom: none;
     }
 
     .panel h3 {
-      font-size: 1.4rem;
+      font-size: 1.7rem;
+      line-height: 1.12;
       margin-bottom: 0.7rem;
     }
 
@@ -639,7 +673,33 @@
   <header class="topbar">
     <div class="shell topbar-inner">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">CC</div>
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <!-- towers -->
+            <rect x="3" y="11" width="6" height="16" />
+            <rect x="23" y="11" width="6" height="16" />
+            <rect x="11" y="7" width="10" height="20" />
+            <!-- curtain wall -->
+            <rect x="6" y="16" width="20" height="11" />
+            <!-- crenellations -->
+            <rect x="3" y="9" width="1.7" height="2.4" />
+            <rect x="5.15" y="9" width="1.7" height="2.4" />
+            <rect x="7.3" y="9" width="1.7" height="2.4" />
+            <rect x="23" y="9" width="1.7" height="2.4" />
+            <rect x="25.15" y="9" width="1.7" height="2.4" />
+            <rect x="27.3" y="9" width="1.7" height="2.4" />
+            <rect x="11" y="5" width="2.4" height="2.4" />
+            <rect x="14.8" y="5" width="2.4" height="2.4" />
+            <rect x="18.6" y="5" width="2.4" height="2.4" />
+            <!-- flag -->
+            <rect x="15.4" y="0.5" width="1.2" height="5" />
+            <path d="M16.6 1 L21 2.4 L16.6 3.8 Z" />
+            <!-- pointed gate + windows (openings) -->
+            <path d="M13.4 27 V21 Q13.4 17.6 16 17.6 Q18.6 17.6 18.6 21 V27 Z" fill="#46586a" />
+            <rect x="5" y="14.5" width="2" height="4.2" rx="1" fill="#46586a" />
+            <rect x="25" y="14.5" width="2" height="4.2" rx="1" fill="#46586a" />
+          </svg>
+        </div>
         <div class="brand-copy">
           <p class="brand-name">Castelo de Campo</p>
           <p class="brand-sub" data-i18n="brandSub">Psicologia e cuidado emocional</p>
@@ -691,6 +751,77 @@
 
         <aside class="hero-card" aria-label="Visual representation of calm and listening">
           <div class="photo">
+            <svg viewBox="0 0 620 480" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Vista através de arcos góticos de pedra para o mar e um jardim ao entardecer">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#d3e4e3" />
+                  <stop offset="0.55" stop-color="#e8eee6" />
+                  <stop offset="1" stop-color="#f1eede" />
+                </linearGradient>
+                <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#6fb0a6" />
+                  <stop offset="1" stop-color="#3f7d7a" />
+                </linearGradient>
+                <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#d2c6ad" />
+                  <stop offset="0.5" stop-color="#bcaa8c" />
+                  <stop offset="1" stop-color="#9c8b6d" />
+                </linearGradient>
+                <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#fff7e6" stop-opacity="0.95" />
+                  <stop offset="1" stop-color="#fff7e6" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <!-- the view (only seen through the arch openings) -->
+              <rect x="0" y="0" width="620" height="480" fill="url(#sky)" />
+              <circle cx="309" cy="150" r="120" fill="url(#sun)" />
+              <!-- distant headland + tower, centred in the middle arch -->
+              <path d="M150,300 Q260,272 360,294 Q470,312 540,300 L540,360 L150,360 Z" fill="#9bb089" opacity="0.55" />
+              <g fill="#586b7c" opacity="0.9">
+                <rect x="298" y="196" width="24" height="104" />
+                <polygon points="294,196 326,196 310,150" />
+                <rect x="305" y="214" width="4" height="14" fill="#3f4e5c" />
+                <rect x="311" y="214" width="4" height="14" fill="#3f4e5c" />
+              </g>
+              <!-- sea -->
+              <rect x="0" y="300" width="620" height="180" fill="url(#sea)" />
+              <g fill="#ffffff" opacity="0.18">
+                <rect x="60" y="330" width="120" height="3" rx="1.5" />
+                <rect x="380" y="348" width="150" height="3" rx="1.5" />
+                <rect x="200" y="372" width="110" height="3" rx="1.5" />
+              </g>
+              <!-- garden terrace at the foot of the arcade -->
+              <rect x="0" y="440" width="620" height="40" fill="#5a6e49" />
+
+              <!-- stone arcade: full panel with three pointed arches punched out -->
+              <path fill-rule="evenodd" fill="url(#stone)" d="
+                M0,0 H620 V480 H0 Z
+                M36,470 L36,210 A157,157 0 0 1 114.5,74 A157,157 0 0 1 193,210 L193,470 Z
+                M231,470 L231,210 A157,157 0 0 1 309.5,74 A157,157 0 0 1 388,210 L388,470 Z
+                M426,470 L426,210 A157,157 0 0 1 504.5,74 A157,157 0 0 1 583,210 L583,470 Z
+              " />
+
+              <!-- recessed shadow + light edge inside each arch for depth -->
+              <g fill="none" stroke-width="6" opacity="0.5">
+                <path stroke="#6f6047" d="M39,470 L39,210 A154,154 0 0 1 114.5,77 A154,154 0 0 1 190,210 L190,470" />
+                <path stroke="#6f6047" d="M234,470 L234,210 A154,154 0 0 1 309.5,77 A154,154 0 0 1 385,210 L385,470" />
+                <path stroke="#6f6047" d="M429,470 L429,210 A154,154 0 0 1 504.5,77 A154,154 0 0 1 580,210 L580,470" />
+              </g>
+
+              <!-- capitals + impost band at the springline -->
+              <g fill="#9c8b6d">
+                <rect x="186" y="200" width="52" height="16" />
+                <rect x="381" y="200" width="52" height="16" />
+              </g>
+              <!-- foreground greenery, echoing the reference garden -->
+              <g>
+                <ellipse cx="22" cy="430" rx="46" ry="84" fill="#46582f" />
+                <ellipse cx="600" cy="438" rx="40" ry="70" fill="#46582f" />
+                <ellipse cx="78" cy="452" rx="40" ry="34" fill="#5a6e49" />
+                <ellipse cx="548" cy="456" rx="44" ry="30" fill="#5a6e49" />
+              </g>
+            </svg>
             <div class="photo-caption">
               <strong data-i18n="photoTitle">Cuidado com tempo, presença e atenção</strong>
               <span class="muted small" data-i18n="photoText">Ambiente pensado para transmitir serenidade, escuta e responsabilidade profissional.</span>
