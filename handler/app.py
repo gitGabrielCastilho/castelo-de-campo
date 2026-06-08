@@ -119,9 +119,11 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError, UnicodeDecodeError):
             return self._json(400, {"ok": False, "error": "could not parse body"})
 
-        # honeypot: bots fill hidden "website" field
-        if fields.get("website"):
-            return self._json(200, {"ok": True})  # silently accept, drop
+        # honeypot: bots fill hidden field; named hp_field (not "website",
+        # which browser autofill/password managers tend to populate)
+        if fields.get("hp_field"):
+            print(f"[info] honeypot triggered from {ip}; dropping", flush=True)
+            return self._json(200, {"ok": True})  # accept to the bot, but drop
 
         missing = [k for k in REQUIRED if not str(fields.get(k, "")).strip()]
         if missing:
