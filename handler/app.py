@@ -25,7 +25,8 @@ from email.message import EmailMessage
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs
 
-REQUIRED = ["name", "email", "phone", "city", "language", "format", "reason", "consent"]
+REQUIRED = ["name", "email", "phone", "city", "language", "reason", "consent"]
+SUBMISSION_FIELDS = ["name", "email", "phone", "city", "language", "format", "reason", "consent"]
 MAX_BODY = 64 * 1024
 _last_seen: dict[str, float] = {}
 
@@ -63,7 +64,7 @@ def send_email(record):
     msg["From"] = mail_from
     msg["To"] = mail_to
     msg["Reply-To"] = record.get("email", mail_from)
-    body = "\n".join(f"{k}: {record.get(k, '')}" for k in REQUIRED + ["received_at", "ip"])
+    body = "\n".join(f"{k}: {record.get(k, '')}" for k in SUBMISSION_FIELDS + ["received_at", "ip"])
     msg.set_content(body)
 
     try:
@@ -131,7 +132,8 @@ class Handler(BaseHTTPRequestHandler):
         if str(fields.get("consent")).lower() not in ("on", "true", "1", "yes"):
             return self._json(400, {"ok": False, "error": "consent required"})
 
-        record = {k: str(fields.get(k, "")).strip() for k in REQUIRED}
+        fields["format"] = "online"
+        record = {k: str(fields.get(k, "")).strip() for k in SUBMISSION_FIELDS}
         record["received_at"] = datetime.now(timezone.utc).isoformat()
         record["ip"] = ip
 

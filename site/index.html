@@ -329,7 +329,8 @@
       padding: 1.3rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 1.1rem;
+      justify-content: flex-start;
       overflow: hidden;
       position: relative;
       min-height: 100%;
@@ -368,6 +369,46 @@
       font-family: var(--serif);
       display: block;
       margin-bottom: 0.35rem;
+    }
+
+    .about-me-card {
+      padding: 1.2rem 1.1rem;
+      border-radius: 22px;
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid rgba(90, 110, 73, 0.12);
+    }
+
+    .about-me-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .about-me-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .about-me-card li {
+      position: relative;
+      padding-left: 1.15rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .about-me-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(90, 110, 73, 0.1);
     }
 
     .section-head {
@@ -827,6 +868,24 @@
               <span class="muted small" data-i18n="photoText">Ambiente pensado para transmitir serenidade, escuta e responsabilidade profissional.</span>
             </div>
           </div>
+
+          <section class="about-me-card" aria-labelledby="about-me-heading">
+            <div class="section-kicker" data-i18n="aboutMeKicker">Sobre mim</div>
+            <h2 id="about-me-heading" data-i18n="aboutMeTitle">Formação e aperfeiçoamento</h2>
+            <ul>
+              <li data-i18n="aboutMeItem1">Atualização contínua, em estudo clínico contínuo.</li>
+              <li data-i18n="aboutMeItem2">Aperfeiçoamento: Gestão de Emoções do paciente em Psicoterapia Cognitivo-Comportamental — 2025.</li>
+              <li data-i18n="aboutMeItem3">Aperfeiçoamento: A Escuta dos Excessos — 2026–atual — PUCRS.</li>
+              <li data-i18n="aboutMeItem4">Aperfeiçoamento: Curso em Psicologia Comportamental — UMC.</li>
+              <li data-i18n="aboutMeItem5">Aperfeiçoamento: Curso em Psicologia da Saúde — UMC.</li>
+              <li data-i18n="aboutMeItem6">Aperfeiçoamento em resiliência e processos de adaptação, épocas de mudanças e transformação.</li>
+              <li data-i18n="aboutMeItem7">Aperfeiçoamento constante com pessoas imigrantes ou não, de diversos países e culturas.</li>
+              <li data-i18n="aboutMeItem8">Graduação em Psicologia: Universidade São Francisco, UMC.</li>
+              <li data-i18n="aboutMeItem9">Fluência e competência em Inglês no maior nível (C2), conforme o Common European Framework of Reference for Languages, curso de inglês avançado na instituição Casa Thomas Jefferson e certificação Cambridge.</li>
+              <li data-i18n="aboutMeItem10">Gestão de pequenos grupos de mulheres e jovens.</li>
+              <li data-i18n="aboutMeItem11">Curso em Psicologia Existencial Heideggeriana — UMC.</li>
+            </ul>
+          </section>
         </aside>
       </div>
     </section>
@@ -917,16 +976,11 @@
               </label>
             </div>
 
-            <div class="fields-2">
-              <label>
-                <span data-i18n="labelLanguage">Idioma preferido</span>
-                <select name="language" required data-options="languageOptions"></select>
-              </label>
-              <label>
-                <span data-i18n="labelFormat">Formato preferido</span>
-                <select name="format" required data-options="formatOptions"></select>
-              </label>
-            </div>
+            <label>
+              <span data-i18n="labelLanguage">Idioma preferido</span>
+              <select name="language" required data-options="languageOptions"></select>
+            </label>
+            <input type="hidden" name="format" value="online" />
 
             <label>
               <span data-i18n="labelReason">Breve motivo do interesse em psicoterapia</span>
@@ -982,6 +1036,19 @@
         meta3Text: 'Espaço sensível para quem deseja iniciar processo terapêutico com calma.',
         photoTitle: 'Cuidado com tempo, presença e atenção',
         photoText: 'Ambiente pensado para transmitir serenidade, escuta e responsabilidade profissional.',
+        aboutMeKicker: 'Sobre mim',
+        aboutMeTitle: 'Formação e aperfeiçoamento',
+        aboutMeItem1: 'Atualização contínua, em estudo clínico contínuo.',
+        aboutMeItem2: 'Aperfeiçoamento: Gestão de Emoções do paciente em Psicoterapia Cognitivo-Comportamental — 2025.',
+        aboutMeItem3: 'Aperfeiçoamento: A Escuta dos Excessos — 2026–atual — PUCRS.',
+        aboutMeItem4: 'Aperfeiçoamento: Curso em Psicologia Comportamental — UMC.',
+        aboutMeItem5: 'Aperfeiçoamento: Curso em Psicologia da Saúde — UMC.',
+        aboutMeItem6: 'Aperfeiçoamento em resiliência e processos de adaptação, épocas de mudanças e transformação.',
+        aboutMeItem7: 'Aperfeiçoamento constante com pessoas imigrantes ou não, de diversos países e culturas.',
+        aboutMeItem8: 'Graduação em Psicologia: Universidade São Francisco, UMC.',
+        aboutMeItem9: 'Fluência e competência em Inglês no maior nível (C2), conforme o Common European Framework of Reference for Languages, curso de inglês avançado na instituição Casa Thomas Jefferson e certificação Cambridge.',
+        aboutMeItem10: 'Gestão de pequenos grupos de mulheres e jovens.',
+        aboutMeItem11: 'Curso em Psicologia Existencial Heideggeriana — UMC.',
         aboutKicker: 'Sobre',
         aboutTitle: 'Um espaço clínico voltado para presença, escuta e construção gradual do processo terapêutico.',
         aboutText1: 'Castelo de Campo é um espaço clínico dedicado ao cuidado psicológico com atenção à ética profissional, à confidencialidade e ao ritmo singular de cada pessoa.',
@@ -1013,7 +1080,6 @@
         labelPhone: 'Telefone / WhatsApp',
         labelCity: 'Cidade / Estado',
         labelLanguage: 'Idioma preferido',
-        labelFormat: 'Formato preferido',
         labelReason: 'Breve motivo do interesse em psicoterapia',
         consentText: 'Li e concordo com o uso dos meus dados para fins de contato sobre a lista de espera, conforme a política de privacidade.',
         formButton: 'Enviar inscrição',
@@ -1030,11 +1096,6 @@
         languageOptions: [
           ['Português (Brasil)', 'pt-BR'],
           ['English', 'en']
-        ],
-        formatOptions: [
-          ['Online', 'online'],
-          ['Presencial', 'in-person'],
-          ['Sem preferência', 'no-preference']
         ],
         pageTitle: 'Castelo de Campo — Lista de espera 2027',
         pageDescription: 'Lista de espera para atendimentos psicológicos em 2027 do espaço clínico Castelo de Campo.'
@@ -1059,6 +1120,19 @@
         meta3Text: 'Sensitive space for those who wish to begin therapy with calm and respect.',
         photoTitle: 'Care shaped by time, presence, and attention',
         photoText: 'A setting designed to convey calm, listening, and professional responsibility.',
+        aboutMeKicker: 'About me',
+        aboutMeTitle: 'Education and continuing training',
+        aboutMeItem1: 'Continuous professional development through ongoing clinical study.',
+        aboutMeItem2: 'Advanced training: Managing Patient Emotions in Cognitive-Behavioral Psychotherapy — 2025.',
+        aboutMeItem3: 'Advanced training: Listening to Excesses — 2026–present — PUCRS.',
+        aboutMeItem4: 'Advanced training: Course in Behavioral Psychology — UMC.',
+        aboutMeItem5: 'Advanced training: Course in Health Psychology — UMC.',
+        aboutMeItem6: 'Advanced training in resilience and adaptation processes during periods of change and transformation.',
+        aboutMeItem7: 'Ongoing development working with immigrants and non-immigrants from diverse countries and cultures.',
+        aboutMeItem8: 'Degree in Psychology: Universidade São Francisco, UMC.',
+        aboutMeItem9: 'English fluency and competence at the highest level (C2) according to the Common European Framework of Reference for Languages, advanced English coursework at Casa Thomas Jefferson, and Cambridge certification.',
+        aboutMeItem10: 'Facilitation of small groups for women and young people.',
+        aboutMeItem11: 'Course in Heideggerian Existential Psychology — UMC.',
         aboutKicker: 'About',
         aboutTitle: 'A clinical space centered on presence, listening, and gradual construction of the therapeutic process.',
         aboutText1: 'Castelo de Campo is a clinical space focused on psychological care, emotional support, professional ethics, confidentiality, and attention to each person’s individual pace.',
@@ -1090,7 +1164,6 @@
         labelPhone: 'Phone / WhatsApp',
         labelCity: 'City / State',
         labelLanguage: 'Preferred language',
-        labelFormat: 'Preferred format',
         labelReason: 'Brief reason for interest in psychotherapy',
         consentText: 'I have read and agree to the use of my data for contact purposes related to the waiting list, according to the privacy policy.',
         formButton: 'Submit registration',
@@ -1107,11 +1180,6 @@
         languageOptions: [
           ['Portuguese', 'pt-BR'],
           ['English', 'en']
-        ],
-        formatOptions: [
-          ['Online', 'online'],
-          ['In-person', 'in-person'],
-          ['No preference', 'no-preference']
         ],
         pageTitle: 'Castelo de Campo — Waiting List 2027',
         pageDescription: 'Waiting list for psychological care in 2027 at Castelo de Campo clinical space.'
